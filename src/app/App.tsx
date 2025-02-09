@@ -1,9 +1,10 @@
 import React, {useEffect, useLayoutEffect} from 'react';
 import AppPathStore from "entities/app-path-store/app-path-store";
 import Header from "features/header/header";
-import  './styles/reset.scss'
+import  './styles/reset.css'
 import {renderPage} from "app/helpers/renderPage";
 import {observer} from "mobx-react-lite";
+import {navigate} from "shared/navigate/navigate";
 
 const App = observer(() => {
 
@@ -14,7 +15,11 @@ const App = observer(() => {
     };
 
     useLayoutEffect(() => {
-        setPath(getPageFromURL());
+        if (window.location.pathname !== '/') {
+            navigate(getPageFromURL())
+        } else {
+            window.history.pushState({}, '', path);
+        }
     }, []);
 
     useEffect(() => {
@@ -28,7 +33,7 @@ const App = observer(() => {
 
 
     return (
-        <div>
+        <div style={{backgroundColor: '#ebecec'}}>
             <Header />
             {renderPage(path)}
         </div>
