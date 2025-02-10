@@ -1,4 +1,4 @@
-import AppPathStore from "entities/app-path-store/app-path-store";
+import AppPathStore from "entities/appPathStore/appPathStore";
 
 const {setPath} = AppPathStore
 

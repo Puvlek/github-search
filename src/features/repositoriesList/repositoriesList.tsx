@@ -4,7 +4,7 @@ import {getRepositories} from "features/repositoriesList/api/getRepositories"
 import {RepositoriesList} from "features/repositoriesList/model/types/repository-type"
 import cls from './repositoriesList.module.css'
 import {throttle} from "shared/throttle/throttle"
-import Select from "features/repositoriesList/ui/select/select"
+import Select from "widgets/select/select"
 
 const RepositoriesList: FC<{ searchValue: string }> = ({searchValue}) => {
 
