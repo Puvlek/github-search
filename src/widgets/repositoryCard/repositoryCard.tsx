@@ -2,19 +2,24 @@ import React, {FC} from 'react'
 import cls from './repositoryCard.module.css'
 import RepositoryStat from "widgets/repositoryCard/ui/repositoryStat/repositoryStat"
 import HelperButton from "widgets/repositoryCard/ui/helperButton/helperButton"
-import starIcon from '../..//assets/icons/repositories/star.svg'
-import branchIcon from '../../assets/icons/repositories/branch.svg'
-import heartIcon from '../../assets/icons/repositories/heart.svg'
-import redHeartIcon from '../../assets/icons/repositories/redHeart.svg'
-import copyIcon from '../../assets/icons/repositories/copyLink.svg'
+import starIcon from 'assets/icons/repositories/star.svg'
+import branchIcon from 'assets/icons/repositories/branch.svg'
+import heartIcon from 'assets/icons/repositories/heart.svg'
+import redHeartIcon from 'assets/icons/repositories/redHeart.svg'
+import copyIcon from 'assets/icons/repositories/copyLink.svg'
 import {stringCutter} from "widgets/repositoryCard/model/helpers/stringCutter"
 import {Repository} from "entities/appPathStore/types/repository-types"
 import FavoritesStore from "entities/favoritesStore/favoritesStore"
 import {observer} from "mobx-react-lite"
+import ProfileStore from "entities/profileStore/profileStore";
+import {navigate} from "shared/helpers/navigate/navigate";
+import {showNotification} from "shared/helpers/showNotification/showNotification";
+import {copyText} from "shared/helpers/copyText/copyText";
 
 const RepositoryCard: FC<Repository> = observer((props) => {
 
     const {repositories, setRepository, deleteRepository} = FavoritesStore
+    const {setProfileRepository} = ProfileStore
 
     const addOrDeleteInFavorite = () => {
         if (!repositories.some(repository => repository.id === props.id)) {
@@ -22,6 +27,19 @@ const RepositoryCard: FC<Repository> = observer((props) => {
         } else {
             deleteRepository(props)
         }
+    }
+
+    const onClickHandler = () => {
+        setProfileRepository(props)
+        navigate("/profile")
+    }
+
+    const copyRepositoryLink = () => {
+        copyText(`https://github.com/${props.full_name}`)
+        showNotification({
+            message: 'Ссылка скопирована',
+            type: 'info'
+        })
     }
 
     return (
@@ -53,11 +71,17 @@ const RepositoryCard: FC<Repository> = observer((props) => {
                         onClickHandler={addOrDeleteInFavorite}
                         svg={repositories.some(repository => repository.id === props.id) ? redHeartIcon : heartIcon }
                     />
-                    <HelperButton svg={copyIcon}/>
+                    <HelperButton
+                        onClickHandler={copyRepositoryLink}
+                        svg={copyIcon}
+                    />
                 </div>
-                <a href={'/profile'} className={cls.moreInfo}>
+                <button
+                    onClick={onClickHandler}
+                    className={cls.moreInfo}
+                >
                     Подробнее
-                </a>
+                </button>
             </div>
         </div>
     )

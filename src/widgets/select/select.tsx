@@ -1,5 +1,5 @@
 import React, {Dispatch, FC, SetStateAction, useEffect, useRef, useState} from 'react'
-import arrowDownIcon from '../../assets/icons/repositories/arrowDown.svg'
+import arrowDownIcon from 'assets/icons/repositories/arrowDown.svg'
 import cls from './select.module.css'
 
 interface SelectProps {
