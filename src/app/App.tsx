@@ -1,11 +1,11 @@
 import React, {useEffect, useLayoutEffect} from 'react';
-import AppPathStore from "entities/app-path-store/app-path-store";
 import Header from "features/header/header";
 import  './styles/reset.css'
 import {renderPage} from "app/helpers/renderPage";
 import {observer} from "mobx-react-lite";
 import {navigate} from "shared/navigate/navigate";
 import cls from './App.module.css'
+import AppPathStore from "entities/appPathStore/appPathStore";
 
 const App = observer(() => {
 

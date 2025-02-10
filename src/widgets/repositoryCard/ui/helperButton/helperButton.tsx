@@ -3,12 +3,16 @@ import cls from './helperButton.module.css'
 
 interface HelperButtonProps {
     svg: string
+    onClickHandler?: () => void
 }
 
-const HelperButton: FC<HelperButtonProps> = ({svg}) => {
+const HelperButton: FC<HelperButtonProps> = ({svg, onClickHandler}) => {
     return (
-        <button className={cls.helperButton}>
-            <img src={svg} style={{height: '16px'}} />
+        <button
+            className={cls.helperButton}
+            onClick={onClickHandler}
+        >
+            <img src={svg} style={{height: '16px'}} alt=''/>
         </button>
     );
 };
