@@ -9,8 +9,10 @@ import heartIcon from 'assets/icons/repositories/heart.svg'
 import copyLinkIcon from 'assets/icons/repositories/copyLink.svg'
 import FavoritesStore from "entities/favoritesStore/favoritesStore";
 import redHeartIcon from "assets/icons/repositories/redHeart.svg";
-import {navigate} from "shared/navigate/navigate";
+import {navigate} from "shared/helpers/navigate/navigate";
 import {AppRoutes} from "app/router/model/constants/appRoutes";
+import {copyText} from "shared/helpers/copyText/copyText";
+import {showNotification} from "shared/helpers/showNotification/showNotification";
 
 const Profile = observer(() => {
 
@@ -29,6 +31,14 @@ const Profile = observer(() => {
         } else {
             deleteRepository(repository)
         }
+    }
+
+    const copyRepositoryLink = () => {
+        copyText(`https://github.com/${repository.full_name}`)
+        showNotification({
+            message: 'Ссылка скопирована',
+            type: 'info'
+        })
     }
 
     if (!repository) {
@@ -72,7 +82,10 @@ const Profile = observer(() => {
                                 alt=""
                             />
                         </button>
-                        <button className={cls.helperButton}>
+                        <button
+                            onClick={copyRepositoryLink}
+                            className={cls.helperButton}
+                        >
                             <img src={copyLinkIcon} alt=""/>
                         </button>
                     </div>

@@ -12,7 +12,9 @@ import {Repository} from "entities/appPathStore/types/repository-types"
 import FavoritesStore from "entities/favoritesStore/favoritesStore"
 import {observer} from "mobx-react-lite"
 import ProfileStore from "entities/profileStore/profileStore";
-import {navigate} from "shared/navigate/navigate";
+import {navigate} from "shared/helpers/navigate/navigate";
+import {showNotification} from "shared/helpers/showNotification/showNotification";
+import {copyText} from "shared/helpers/copyText/copyText";
 
 const RepositoryCard: FC<Repository> = observer((props) => {
 
@@ -30,6 +32,14 @@ const RepositoryCard: FC<Repository> = observer((props) => {
     const onClickHandler = () => {
         setProfileRepository(props)
         navigate("/profile")
+    }
+
+    const copyRepositoryLink = () => {
+        copyText(`https://github.com/${props.full_name}`)
+        showNotification({
+            message: 'Ссылка скопирована',
+            type: 'info'
+        })
     }
 
     return (
@@ -61,7 +71,10 @@ const RepositoryCard: FC<Repository> = observer((props) => {
                         onClickHandler={addOrDeleteInFavorite}
                         svg={repositories.some(repository => repository.id === props.id) ? redHeartIcon : heartIcon }
                     />
-                    <HelperButton svg={copyIcon}/>
+                    <HelperButton
+                        onClickHandler={copyRepositoryLink}
+                        svg={copyIcon}
+                    />
                 </div>
                 <button
                     onClick={onClickHandler}
