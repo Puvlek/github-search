@@ -1,6 +1,7 @@
 import {AppRoutes} from "app/router/model/constants/appRoutes";
 
 export const renderPage = (path: string) => {
+
     switch (path) {
         case AppRoutes.repositories.path:
             return AppRoutes.repositories.component

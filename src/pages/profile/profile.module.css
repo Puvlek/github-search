@@ -1,0 +1,76 @@
+.profileWrapper {
+    margin: 100px auto;
+    width: 862px;
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    gap: 24px;
+    border-radius: 20px;
+    background: #fff;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.avatar {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+}
+
+.repositoryMainInfo {
+    display: flex;
+    gap: 24px;
+}
+
+.nameAndDescriptionBlock {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.fullName {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.description {
+    font-size: 20px;
+}
+
+.cardBlock {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.helperButton {
+    cursor: pointer;
+    background: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 8px;
+    border: 1px solid #f5f5f5;
+}
+
+.helpersButtonBlock {
+    display: flex;
+    gap: 32px;
+}
+
+.openRepositoryButton {
+    background: #d34333;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+}
+
+.profileFooter {
+    display: flex;
+    justify-content: space-between;
+}
