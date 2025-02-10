@@ -1,0 +1,62 @@
+.repositoryCardWrapper {
+    background-color: #fff !important;
+    display: flex;
+    flex-direction: column;
+    width: 282px;
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.repositoryCardHeader {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.statSection {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-direction: row;
+}
+
+.ownerAvatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.repositoryCardBody {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 16px;
+    margin: 12px 0;
+}
+
+.link {
+    color: #1E89F0;
+}
+
+.repositoryCardFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.helperButtonsBlock {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.moreInfo {
+    background: #d04232;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    padding: 8px 16px;
+    cursor: pointer;
+}

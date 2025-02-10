@@ -1,0 +1,30 @@
+.selectButton {
+    width: 286px;
+    padding: 12px 20px;
+    background: #fff;
+    border-radius: 12px;
+    border: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+}
+
+.selectMenu {
+    border-radius: 12px;
+    background: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 12px 20px;
+    position: absolute;
+    width: 286px;
+}
+
+.selectMenu li {
+    cursor: pointer;
+    margin: 10px 0;
+}
