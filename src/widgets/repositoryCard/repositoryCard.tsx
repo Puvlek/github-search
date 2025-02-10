@@ -32,7 +32,6 @@ const RepositoryCard: FC<Repository> = observer((props) => {
         navigate("/profile")
     }
 
-
     return (
         <div className={cls.repositoryCardWrapper}>
             <div className={cls.repositoryCardHeader}>
