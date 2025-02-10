@@ -1,0 +1,11 @@
+.app {
+    background-color: #ebecec;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.globalMargin {
+    margin-inline: 198px
+}
+

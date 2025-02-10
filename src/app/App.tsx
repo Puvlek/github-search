@@ -5,6 +5,7 @@ import  './styles/reset.css'
 import {renderPage} from "app/helpers/renderPage";
 import {observer} from "mobx-react-lite";
 import {navigate} from "shared/navigate/navigate";
+import cls from './App.module.css'
 
 const App = observer(() => {
 
@@ -33,9 +34,11 @@ const App = observer(() => {
 
 
     return (
-        <div style={{backgroundColor: '#ebecec'}}>
+        <div className={cls.app}>
             <Header />
-            {renderPage(path)}
+            <div className={cls.globalMargin}>
+                {renderPage(path)}
+            </div>
         </div>
     )
 });
