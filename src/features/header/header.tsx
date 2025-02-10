@@ -4,7 +4,7 @@ import searchIcon from 'assets/icons/header/search.svg'
 import heartIcon from 'assets/icons/header/heart.svg'
 import profileIcon from 'assets/icons/header/profile.svg'
 import {classNames} from "shared/lib/helpers/classNames/classNames";
-import {navigate} from "shared/navigate/navigate";
+import {navigate} from "shared/helpers/navigate/navigate";
 import {AppRoutes} from "app/router/model/constants/appRoutes";
 import FavoritesStore from "entities/favoritesStore/favoritesStore";
 import {observer} from "mobx-react-lite";
