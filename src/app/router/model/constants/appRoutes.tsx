@@ -1,18 +1,31 @@
-import Repositories from "pages/repositories/repositories";
-import Profile from "pages/profile/profile";
-import Favorites from "pages/favorites/favorites";
+import {FavoritesPage} from "pages/favorites";
+import {ProfilePage} from "pages/profile";
+import {RepositoriesPage} from "pages/repositories";
+import {Suspense} from "react";
 
 export const AppRoutes = {
     repositories: {
         path: '/repositories',
-        component: <Repositories />
+        component: (
+            <Suspense fallback={<div>Loading...</div>}>
+                <RepositoriesPage/>
+            </Suspense>
+        )
     },
     profile: {
         path: '/profile',
-        component: <Profile />
+        component: (
+            <Suspense fallback={<div>Loading...</div>}>
+                <ProfilePage/>
+            </Suspense>
+        )
     },
     favorites: {
         path: '/favorites',
-        component: <Favorites />
+        component: (
+            <Suspense fallback={<div>Loading...</div>}>
+                <FavoritesPage/>
+            </Suspense>
+        )
     }
 }
