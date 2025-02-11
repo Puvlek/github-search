@@ -1,0 +1,9 @@
+.helperButton {
+    cursor: pointer;
+    background: none;
+    border: solid #e5e6e6 1px;
+    border-radius: 8px;
+    height: 32px;
+    width: 32px;
+    color: red;
+}

@@ -1,0 +1,32 @@
+.isEmpty {
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+}
+
+.favoritesList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 28px;
+}
+.backButton {
+    color: #000;
+    font-size: 14px;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 24px;
+}
+
+.result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 37px;
+    margin-top: 48px;
+}

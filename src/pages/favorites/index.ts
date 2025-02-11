@@ -1,0 +1,1 @@
+export { LazyFavoritePage as FavoritesPage } from './ui/favorites.async'

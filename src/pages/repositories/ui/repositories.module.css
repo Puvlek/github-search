@@ -1,0 +1,16 @@
+.repositoriesWrapper {
+    padding: 48px 0;
+}
+
+.searchTextField {
+    border: 0 solid;
+    border-radius: 12px;
+    width: 100%;
+    padding: 16px 20px;
+    margin-bottom: 48px;
+}
+
+.searchTextField:focus {
+    outline: none;
+    border: none;
+}

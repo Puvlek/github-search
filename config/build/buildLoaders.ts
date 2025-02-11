@@ -5,7 +5,7 @@ import {BuildOptions} from "./types/config";
 export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
 
     const cssLoader = {
-        test: /\.s[ac]ss$/i,
+        test: /\.css$/i,
         use: [
             isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
@@ -21,6 +21,14 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
         ]
     }
 
+    const svgLoader = {
+        test: /\.svg$/,
+        type: 'asset/resource', // Используем asset/resource для обработки SVG как файлов
+        generator: {
+            filename: 'static/icons/[hash][ext][query]', // Опционально: настройка пути для SVG
+        }
+    }
+
     const typescriptLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
@@ -30,5 +38,6 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
     return [
         typescriptLoader,
         cssLoader,
+        svgLoader,
     ]
 }
