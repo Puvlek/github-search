@@ -11,7 +11,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://puvlek.github.io/github-search/",
+  "homepage": "https://Puvlek.github.io/github-search/",
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^17.0.21",
