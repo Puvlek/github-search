@@ -1,7 +1,7 @@
 import {makeAutoObservable} from "mobx";
 
 class AppPathStore {
-    path = '/repositories'
+    path = '/'
 
     constructor() {
         makeAutoObservable(this)

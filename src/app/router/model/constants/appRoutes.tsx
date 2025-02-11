@@ -2,12 +2,13 @@ import {FavoritesPage} from "pages/favorites";
 import {ProfilePage} from "pages/profile";
 import {RepositoriesPage} from "pages/repositories";
 import {Suspense} from "react";
+import Fallback from "app/router/ui/fallback";
 
 export const AppRoutes = {
     repositories: {
-        path: '/repositories',
+        path: '/',
         component: (
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Fallback />}>
                 <RepositoriesPage/>
             </Suspense>
         )
@@ -15,7 +16,7 @@ export const AppRoutes = {
     profile: {
         path: '/profile',
         component: (
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Fallback />}>
                 <ProfilePage/>
             </Suspense>
         )
@@ -23,7 +24,7 @@ export const AppRoutes = {
     favorites: {
         path: '/favorites',
         component: (
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Fallback />}>
                 <FavoritesPage/>
             </Suspense>
         )

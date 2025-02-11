@@ -15,6 +15,7 @@ import ProfileStore from "entities/profileStore/profileStore";
 import {navigate} from "shared/helpers/navigate/navigate";
 import {showNotification} from "shared/helpers/showNotification/showNotification";
 import {copyText} from "shared/helpers/copyText/copyText";
+import {AppRoutes} from "app/router/model/constants/appRoutes";
 
 const RepositoryCard: FC<Repository> = observer((props) => {
 
@@ -31,7 +32,7 @@ const RepositoryCard: FC<Repository> = observer((props) => {
 
     const onClickHandler = () => {
         setProfileRepository(props)
-        navigate("/profile")
+        navigate(AppRoutes.profile.path)
     }
 
     const copyRepositoryLink = () => {
