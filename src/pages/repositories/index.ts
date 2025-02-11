@@ -1,0 +1,1 @@
+export { LazyRepositoriesPage as RepositoriesPage } from './ui/repositories.async'
